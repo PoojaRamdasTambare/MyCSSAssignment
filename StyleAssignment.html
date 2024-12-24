@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Index</title>
+    <style>
+        .div1 {
+            border: 2px solid;
+            width: 100px;
+            height: 50px;
+        }
+        .div2 {
+            border: 2px solid;
+            width: 150px;
+            height: 50px;
+        }
+        .div3 {
+            border: 2px solid;
+            width: 200px;
+            height: 50px;
+        }
+        .div4 {
+            border: 2px solid;
+            width: 250px;
+            height: 50px;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("btnOk").addEventListener("click", function () {
+                const et = document.getElementById("et").value;
+                const ec = document.getElementById("ec").value;
+                const es = document.getElementById("es").value;
+
+                const step = parseInt(es, 10);
+                if (step >= 1 && step <= 4) {
+                    const stepBox = document.querySelector(".div" + step);
+                    stepBox.textContent = et;
+                    stepBox.style.backgroundColor = ec;
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="div1">1</div>
+    <div class="div2">2</div>
+    <div class="div3">3</div>
+    <div class="div4">4</div>
+    <br />
+    Enter Text: <input type="text" id="et" /> <br />
+    Enter Color: <input type="text" id="ec" /> <br />
+    Enter Step (1-4): <input type="text" id="es" /> <br />
+    <input type="button" value="Ok" id="btnOk" />
+</body>
+</html>
